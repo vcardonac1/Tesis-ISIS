@@ -235,6 +235,7 @@ class listaEnlazada(structureInterface):
         """
         edges = list()
         nodos = self.getNodeValues()
+        '''
         if len(nodos) > 0:
             edges.append((sep_inicio,nodos[0]))
             if self.tipo == 2:
@@ -253,6 +254,7 @@ class listaEnlazada(structureInterface):
                 else:
                     edges.append((nodos[i],sep_final))
                     edges.append((sep_final,nodos[i]))
+        '''
         return edges          
 
     def isNodeValue(self, infoNodo):
