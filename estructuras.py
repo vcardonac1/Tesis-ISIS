@@ -288,7 +288,7 @@ class listaEnlazada(structureInterface):
         pos = lt.isPresent(self.estructura, infoNodo)
         if pos < lt.size(self.estructura) and pos > 0:
             listaAdj.append(lt.getElement(self.estructura, pos+1))
-        
+
         if self.tipo == 2 and pos-1 > 0:
             listaAdj.append(lt.getElement(self.estructura, pos-1))
             
