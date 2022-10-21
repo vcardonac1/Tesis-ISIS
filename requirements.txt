@@ -1,0 +1,9 @@
+graphviz==0.20.1
+GraphvizAnim==1.1.0
+ipyfilechooser==0.6.0
+ipython==8.5.0
+ipywidgets==8.0.2
+matplotlib==3.5.3
+numpy==1.19.5
+pandas==1.4.4
+pydot==1.4.2
