@@ -1,4 +1,15 @@
 # https://www.evamariakiss.de/apps/bstlearner_v1.php
+
+def defaultfunction(id1, id2):
+    if type(id1) != type(id2):
+        id1 = str(id1)
+        id2 = str(id2)
+    if id1 > id2:
+        return 1
+    elif id1 < id2:
+        return -1
+    return 0
+
 class TreeNode:
     def __init__(self, key):
         self.key = key
@@ -24,13 +35,17 @@ class bst():
             # Find parent node
             while x != None:
                 p = x
-                if newNode.key < x.key:
+                #if newNode.key < x.key:
+                print(newNode.key)
+                if defaultfunction(newNode.key, x.key) < 0:
                     x = x.left
-                elif newNode.key > x.key:
+                #elif newNode.key > x.key:
+                elif defaultfunction(newNode.key, x.key) > 0:  
                     x = x.right
             # Set parent, left and right child for newNode 
-            newNode.parent = p       
-            if newNode.key < p.key:
+            newNode.parent = p
+            #if newNode.key < p.key:
+            if defaultfunction(newNode.key, p.key) < 0:
                 p.left = newNode
             else: 
                 p.right = newNode
