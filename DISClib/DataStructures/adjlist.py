@@ -108,7 +108,11 @@ def removeVertex(graph, vertex):
         Exception
     """
     # TODO
-    pass
+    try:
+        map.remove(graph['vertices'], vertex)
+        return graph
+    except Exception as exp:
+        error.reraise(exp, 'ajlist:removeVertex')
 
 
 def numVertices(graph):

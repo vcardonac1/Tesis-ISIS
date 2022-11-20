@@ -18,7 +18,7 @@ class bst():
         else:
             return False
 
-    def getNodeValues(self, order='Preorder'):
+    def getNodeValues(self, order='Preorder'):  # Recorrido por Niveles
         lst = list()
         if not omap.isEmpty(self.estructura):
             if order == 'Inorder':
@@ -27,6 +27,8 @@ class bst():
                 iter = lt.iterator(tr.preorder(self.estructura))
             elif order == 'Postorder':
                 iter = lt.iterator(tr.postorder(self.estructura))
+            elif order == 'Por Niveles':
+                iter = recorridoPoNiveles(self.estructura)
             for i in iter:
                 lst.append(i)
         return lst
@@ -58,3 +60,7 @@ def defaultfunction(id1, id2):
     elif id1 < id2:
         return -1
     return 0
+
+def recorridoPoNiveles(bstTree):
+    # TODO: 
+    pass
