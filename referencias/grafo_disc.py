@@ -50,7 +50,10 @@ class grafo:
     def findAdjacentNode(self, infoNodo):   #done
         infoNodo = str(infoNodo)
         lst = list()
-        iter = lt.iterator(g.adjacents(self.estructura, infoNodo))
-        for i in iter:
-            lst.append(i)
+        try:
+            iter = lt.iterator(g.adjacents(self.estructura, infoNodo))
+            for i in iter:
+                lst.append(i)
+        except:
+            pass
         return lst
