@@ -6,19 +6,22 @@
 _pip install -r requirements.txt_
 4. Ingrese al archivo _ComponenteVisual.ipynb_ y ejecute todas las celdas. Al final del notebook encontrará la interfaz visual.
 
-## Guia de Uso
-Una vez haya instalado correctamente todas las dependencias y ejecutado las celdas del archivo _ComponenteVisual.ipynb_ podrá inciar a hacer uso de la aplicación.
-* Para iniciar, debe seleccionar una estructura de datos de su autoría, o seleccionar la que viene como referencia en la carpeta _./referencias/_
-* Una vez cargada la estructura, podrá hacer uso de las funcionalidades de la aplicación. En la ejecución de cada actividad, resivirá alertas en caso de que el 
-resultado no concuerde con el esperado.
+## Manual de Usuario
+1.	Para cargar una estructura de datos, ingresar al Tab de la estructura que desea añadir y seleccionar la opción de carga. Esto abrirá un explorador de archivos en el cual debe seleccionar su implementación de la estructura. Si solo desea visualizar el comportamiento de una estructura de referencia puede ingresar desde el explorador de archivos a la carpeta del proyecto y ahí encontrará los archivos: 
+* arbol_disc.py
+* grafo_disc.py
+* lista_dics.py
 
-## Contratos: Estructura de datos 
-En esta sección encontrará los contratos (nomenclatura, input/output) que debe cumplir su implementación para que sea compatible con la aplicación
+**Nota:**
+Si se encuentra haciendo uso de la librería DISClib [1] esta librería se debe encontrar dentro de la carpeta del proyecto (el proyecto ya la incluye) pero para poder cargar una estructura de datos debe hacerlo mediante los archivos
+* arbol_disc.py
+* grafo_disc.py
+* lista_dics.py
 
-### Listas Enlazadas
-* \_\_init\_\_(self, type)
-* addNode_byValue(self, infoNodo)
-* deleteNode_byValue(self, infoNodo)
-* getNodeValues(self)
-* isNodeValue(self, infoNodo)
-* findAdjacentNode(self, infoNodo)
+Que permiten la compatibilidad de la librería DISClib y el proyecto. Por tanto, si desea hacer cambios sobre la librería DISClib debe hacerlos desde la carpeta del proyecto.
+
+2.	Si la estructura se cargó correctamente, ya puede empezar a hacer uso del aplicativo. Recuerde que si va a cambiar de una estructura a otra debe efectuar nuevamente la cargar del archivo .py de dicha estructura.
+
+**IMPORTANTE:** No modifique los archivos de la carpeta referencias, ni de los archivos ComponenteVisual.ipynb, config.py y requirements.txt
+
+Librería DISClib tomada de https://github.com/ISIS1225DEVS/ISIS1225-Lib/tree/main/DISClib
