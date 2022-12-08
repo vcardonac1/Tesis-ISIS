@@ -12,7 +12,7 @@ from DISClib.Algorithms.Graphs import scc
 from DISClib.Algorithms.Graphs import dijsktra as djk
 from DISClib.ADT import queue as q
 
-class grafo:
+class grafo():
     '''
     Clase que representa una Grafo
     
