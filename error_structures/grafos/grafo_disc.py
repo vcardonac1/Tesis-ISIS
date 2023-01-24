@@ -12,7 +12,7 @@ from DISClib.Algorithms.Graphs import scc
 from DISClib.Algorithms.Graphs import dijsktra as djk
 from DISClib.ADT import queue as q
 
-class grafo:
+class grafo():
     '''
     Clase que representa una Grafo
     
@@ -146,15 +146,7 @@ class grafo:
             Lista (python) con los valores de los nodos adyacentes al nodo dado. Si no tiene adyacentes se retorna una lista vacia
             
         '''
-        infoNodo = str(infoNodo)
-        lst = list()
-        try:
-            iter = lt.iterator(g.adjacents(self.estructura, infoNodo))
-            for i in iter:
-                lst.append(i)
-        except:
-            pass
-        return lst
+        return []
     
     def algorithms(self, algoritmo, infoNodo=None):
         '''

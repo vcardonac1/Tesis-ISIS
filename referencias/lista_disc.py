@@ -50,7 +50,16 @@ class listaEnlazada():
             False si el nodo no pertenece a la lista, True si el nodo se elimina de la lista
             
         '''
-        pos = lt.isPresent(self.estructura, infoNodo)
+        pos = -1
+        items = self.getNodeValues()
+        for i in range(len(items)):
+            if defaultfunction(items[i], infoNodo) == 0:
+                pos = i
+        if pos != -1:
+            pos = pos + 1
+        else:
+            return False
+        
         if pos > 1:
             lt.deleteElement(self.estructura, pos)
             return True
@@ -88,7 +97,12 @@ class listaEnlazada():
             True si el nodo pertenece a la lista enlazada, False si no pertenece
             
         '''
-        if lt.isPresent(self.estructura, infoNodo) != 0:
+        pos = -1
+        items = self.getNodeValues()
+        for i in range(len(items)):
+            if defaultfunction(items[i], infoNodo) == 0:
+                pos = i
+        if pos != -1:
             return True
         else:
             return False
@@ -107,13 +121,21 @@ class listaEnlazada():
             
         '''
         lst = list()
-        pos = lt.isPresent(self.estructura, infoNodo)
-        size = lt.size(self.estructura)
-        if pos > 0:
-            if self.type == 2 and pos-1 > 0:
-                lst.append(lt.getElement(self.estructura, pos-1))
-            if pos+1 <= size:
-                lst.append(lt.getElement(self.estructura, pos+1))
+        
+        pos = -1
+        items = self.getNodeValues()
+        for i in range(len(items)):
+            if defaultfunction(items[i], infoNodo) == 0:
+                pos = i
+        if pos != -1:
+            pos = pos + 1
+            
+            size = lt.size(self.estructura)
+            if pos > 0:
+                if self.type == 2 and pos-1 > 0:
+                    lst.append(lt.getElement(self.estructura, pos-1))
+                if pos+1 <= size:
+                    lst.append(lt.getElement(self.estructura, pos+1))            
         return lst
 
 def defaultfunction(elem_1, elem_2):

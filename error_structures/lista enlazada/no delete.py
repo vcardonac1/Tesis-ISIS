@@ -50,24 +50,7 @@ class listaEnlazada():
             False si el nodo no pertenece a la lista, True si el nodo se elimina de la lista
             
         '''
-        pos = -1
-        items = self.getNodeValues()
-        for i in range(len(items)):
-            if defaultfunction(items[i], infoNodo) == 0:
-                pos = i
-        if pos != -1:
-            pos = pos + 1
-        else:
-            return False
-        
-        if pos > 1:
-            lt.deleteElement(self.estructura, pos)
-            return True
-        elif pos == 1:
-            lt.removeFirst(self.estructura)
-            return True
-        else:
-            return False
+        return False
     
     def getNodeValues(self):
         '''
@@ -97,12 +80,7 @@ class listaEnlazada():
             True si el nodo pertenece a la lista enlazada, False si no pertenece
             
         '''
-        pos = -1
-        items = self.getNodeValues()
-        for i in range(len(items)):
-            if defaultfunction(items[i], infoNodo) == 0:
-                pos = i
-        if pos != -1:
+        if lt.isPresent(self.estructura, infoNodo) != 0:
             return True
         else:
             return False
@@ -121,21 +99,13 @@ class listaEnlazada():
             
         '''
         lst = list()
-        
-        pos = -1
-        items = self.getNodeValues()
-        for i in range(len(items)):
-            if defaultfunction(items[i], infoNodo) == 0:
-                pos = i
-        if pos != -1:
-            pos = pos + 1
-            
-            size = lt.size(self.estructura)
-            if pos > 0:
-                if self.type == 2 and pos-1 > 0:
-                    lst.append(lt.getElement(self.estructura, pos-1))
-                if pos+1 <= size:
-                    lst.append(lt.getElement(self.estructura, pos+1))            
+        pos = lt.isPresent(self.estructura, infoNodo)
+        size = lt.size(self.estructura)
+        if pos > 0:
+            if self.type == 2 and pos-1 > 0:
+                lst.append(lt.getElement(self.estructura, pos-1))
+            if pos+1 <= size:
+                lst.append(lt.getElement(self.estructura, pos+1))
         return lst
 
 def defaultfunction(elem_1, elem_2):
